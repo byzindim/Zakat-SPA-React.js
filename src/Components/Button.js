@@ -68,17 +68,12 @@ export default function CustomizedButtons() {
 
     return (
         <div>
-            <ColorButton variant="contained" color="primary" className={classes.margin}>
-                Custom CSS
-      </ColorButton>
             <ThemeProvider theme={theme}>
                 <Button variant="contained" color="primary" className={classes.margin}>
                     Theme Provider
-        </Button>
+                </Button>
             </ThemeProvider>
-            <BootstrapButton variant="contained" color="primary" disableRipple className={classes.margin}>
-                Bootstrap
-      </BootstrapButton>
+
         </div>
     );
 }

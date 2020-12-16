@@ -16,7 +16,10 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import CustomizedButtons from './Button';
-
+import { CircularProgressbar } from 'react-circular-progressbar';
+import '../progressBar.css';
+import { Grid, Paper } from '@material-ui/core';
+const progressbar = 98;
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 345,
@@ -37,6 +40,53 @@ const useStyles = makeStyles((theme) => ({
     },
     avatar: {
         backgroundColor: red[500],
+    },
+    progressBar: {
+        direction: 'row',
+        maxWidth: '300px',
+        // height: '529px',
+        background: '#005EF3'
+    },
+    textProgressBar: {
+        fontFamily: 'Rubik',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: '10px',
+        lineHeight: '14px',
+        letterSpacing: '0.01em',
+        color: '#7D7D7D',
+    },
+    totalSum: {
+        fontFamily: 'Rubik',
+        fontStyle: 'normal',
+        fontWeight: 'bold',
+        fontSize: '12px',
+        lineHeight: '20px',
+        color: '#8DCA78',
+    },
+    tomorrow: {
+        fontFamily: 'Rubik',
+        fontStyle: 'normal',
+        fontWeight: 'bold',
+        fontSize: '12px',
+        lineHeight: '20px',
+        color: '#7D7D7D',
+    },
+    title: {
+        fontFamily: 'Rubik',
+        fontStyle: 'normal',
+        fontWeight: '500',
+        fontSize: '16px',
+        lineHeight: '26px',
+        color: '#000',
+    },
+    article: {
+        fontFamily: 'Rubik',
+        fontStyle: 'normal',
+        fontWeight: '300',
+        fontSize: '16px',
+        lineHeight: '26px',
+        color: '#000',
     },
 }));
 
@@ -70,14 +120,55 @@ export default function RecipeReviewCard() {
                 title="Paella dish"
             />
             <CardContent>
-                <Typography variant="h3" color="textSecondary" component="h4">
+                <Typography className={classes.title} variant="h3" color="textSecondary" component="h4">
                     Сбор средств для постойки школ в Индонезии
         </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography className={classes.article} variant="body2" color="textSecondary" component="p">
                     Диана — единственная и долгожданная! У нее сложный порок сердца и ей нужно провести еще одну операцию Фонтена
         </Typography>
                 <CustomizedButtons />
             </CardContent>
+
+            <Grid container className={classes.content} spacing={3}>
+                <Paper className={classes.paper}>
+                    <Grid container className={classes.progressBar}>
+                        <Grid item lg={3} sm={3}>
+                            <Paper className={classes.paper}>
+                                <div className="container-progressbar">
+                                    <CircularProgressbar value={progressbar}
+                                        text={`${progressbar}%`} />
+                                </div>
+                            </Paper>
+                        </Grid>
+                        <Grid item lg={9} sm={9}>
+                            <Paper className={classes.paper}>
+                                <Typography className={classes.textProgressBar} variant="h6" component="h6" gutterBottom>
+                                    необходимо собрать
+                                            </Typography>
+                                <Typography className={classes.totalSum} variant="h6" component="h6" gutterBottom>
+                                    45 194 из 1 000 000 RUB
+                                            </Typography>
+                                <CustomizedButtons />
+                            </Paper>
+                        </Grid>
+                        <Grid item lg={9} sm={9}>
+                            <Paper className={classes.paper}>
+                                <Typography className={classes.textProgressBar} variant="h6" component="h6" gutterBottom>
+                                    конец
+                                            </Typography>
+                                <Typography className={classes.tomorrow} variant="h6" component="h6" gutterBottom>
+                                    завтра
+                                            </Typography>
+                                <CustomizedButtons />
+                            </Paper>
+                        </Grid>
+                    </Grid>
+                </Paper>
+            </Grid>
+
+
+
+
             <CardActions disableSpacing>
                 <IconButton aria-label="add to favorites">
                     <FavoriteIcon />
