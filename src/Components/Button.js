@@ -52,8 +52,35 @@ const ColorButton = withStyles((theme) => ({
 }))(Button);
 
 const useStyles = makeStyles((theme) => ({
-    margin: {
+    help: {
         margin: theme.spacing(1),
+        background: '#FFFFFF',
+        border: '1px solid #E0E0E0',
+        borderRadius: '10px',
+        width: '158px',
+        height: '22px',
+        fontFamily: 'Rubik',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: '12px',
+        lineHeight: '20px',
+        textAlign: 'center',
+        color: '#7D7D7D',
+    },
+    zakat: {
+        margin: theme.spacing(1),
+        background: '#FFFFFF',
+        border: '1px solid #E0E0E0',
+        borderRadius: '10px',
+        width: '54px',
+        height: '22px',
+        fontFamily: 'Rubik',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: '12px',
+        lineHeight: '20px',
+        textAlign: 'center',
+        color: '#7D7D7D',
     },
 }));
 
@@ -69,8 +96,11 @@ export default function CustomizedButtons() {
     return (
         <div>
             <ThemeProvider theme={theme}>
-                <Button variant="contained" color="primary" className={classes.margin}>
-                    Theme Provider
+                <Button variant="contained" color="primary" className={classes.help}>
+                    помощь нуждающимся
+                </Button>
+                <Button variant="contained" color="primary" className={classes.zakat}>
+                    закят
                 </Button>
             </ThemeProvider>
 

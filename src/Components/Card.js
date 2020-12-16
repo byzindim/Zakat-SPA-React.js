@@ -116,7 +116,7 @@ export default function RecipeReviewCard() {
             />
             <CardMedia
                 className={classes.media}
-                image="/static/images/cards/paella.jpg"
+                image="/img/banner1.png"
                 title="Paella dish"
             />
             <CardContent>
@@ -126,7 +126,6 @@ export default function RecipeReviewCard() {
                 <Typography className={classes.article} variant="body2" color="textSecondary" component="p">
                     Диана — единственная и долгожданная! У нее сложный порок сердца и ей нужно провести еще одну операцию Фонтена
         </Typography>
-                <CustomizedButtons />
             </CardContent>
 
             <Grid container className={classes.content} spacing={3}>
@@ -148,7 +147,6 @@ export default function RecipeReviewCard() {
                                 <Typography className={classes.totalSum} variant="h6" component="h6" gutterBottom>
                                     45 194 из 1 000 000 RUB
                                             </Typography>
-                                <CustomizedButtons />
                             </Paper>
                         </Grid>
                         <Grid item lg={9} sm={9}>
